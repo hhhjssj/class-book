@@ -52,7 +52,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
           }
         `}
       >
-        {/* 左侧 Logo：班徽 + 班级名 */}
+        {/* 左侧   const categoryOrder = [
+    ArticleCategory.MEMORY,
+    ArticleCategory.GROUP,
+    ArticleCategory.VOLUNTEER,
+    ArticleCategory.PERSONAL
+  ];
+
+  const categories = [
+    'All',
+    ...categoryOrder.filter((cat) => currentArticles.some((a) => a.category === cat))
+  ];：班徽 + 班级名 */}
         <div
           className="cursor-pointer flex items-center gap-3 group shrink-0"
           onClick={() => setActiveTab('dashboard')}

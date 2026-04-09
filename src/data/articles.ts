@@ -290,7 +290,7 @@ export const ARTICLE_DATA = [
     },
     zh: {
       title: '415团建',
-      content: '415宿舍的兄弟们一起出游，山路上聊聊生活和学习，热闹得很。'
+      content: '415宿舍的兄弟们一起聚餐，聊聊生活和学习，热闹得很。'
     },
     en: {
       title: '415 Dorm Outing',
