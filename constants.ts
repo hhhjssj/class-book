@@ -22,11 +22,17 @@ export const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
 export const ARTICLE_LABELS: Record<Language, Record<string, string>> = {
   zh: {
     All: '全部',
-    [ArticleCategory.SERENITY]: '班级记忆'
+    [ArticleCategory.MEMORY]: '班级记忆',
+    [ArticleCategory.GROUP]: '集体风采',
+    [ArticleCategory.PERSONAL]: '个人风采',
+    [ArticleCategory.VOLUNTEER]: '志愿服务'
   },
   en: {
     All: 'All',
-    [ArticleCategory.SERENITY]: 'Class Memories'
+    [ArticleCategory.MEMORY]: 'Class Memories',
+    [ArticleCategory.GROUP]: 'Group Highlights',
+    [ArticleCategory.PERSONAL]: 'Personal Highlights',
+    [ArticleCategory.VOLUNTEER]: 'Volunteer Service'
   }
 };
 

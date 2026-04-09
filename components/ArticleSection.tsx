@@ -19,9 +19,11 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
 
   const currentArticles = ARTICLES[language] as MemoryArticle[];
 
+  const categoryOrder = ['memory', 'group', 'volunteer', 'personal'];
+
   const categories = [
     'All',
-    ...Array.from(new Set(currentArticles.map((a) => a.category)))
+    ...categoryOrder.filter((cat) => currentArticles.some((a) => a.category === cat))
   ];
 
   const filteredAndSortedArticles = currentArticles
@@ -29,6 +31,16 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
     .sort((a, b) => {
       const dateA = a.date ? new Date(a.date).getTime() : 0;
       const dateB = b.date ? new Date(b.date).getTime() : 0;
+
+      if (filter === 'All') {
+        const categoryIndexA = categoryOrder.indexOf(String(a.category));
+        const categoryIndexB = categoryOrder.indexOf(String(b.category));
+
+        if (categoryIndexA !== categoryIndexB) {
+          return categoryIndexA - categoryIndexB;
+        }
+      }
+
       return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
     });
 

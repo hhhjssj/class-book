@@ -438,28 +438,30 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ initialVisible = false
               </div>
 
               {/* Playlist Promo - Floating at Bottom */}
-              <div className="relative z-10">
-                <a 
-                  href="https://music.163.com/playlist?id=74188173&uct2=U2FsdGVkX1+9hSmPKFKOu99/rqUgKMjig48CSYAF4Zs=" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block w-full"
-                >
-                  <div className="backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-3 flex items-center justify-between group transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer">
-                    <div className="flex flex-col">
-                      <span className="text-xs font-bold text-white/90 mb-0.5 drop-shadow-md">
-                        {language === 'zh' ? '品味不错？' : 'Nice taste?'}
-                      </span>
-                      <span className="text-[10px] text-white/70 font-medium group-hover:text-white/90 transition-colors">
-                        {language === 'zh' ? '我的歌单有更多好听的哦' : 'Check out my full playlist for more'}
-                      </span>
-                    </div>
-                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                      <ExternalLink className="w-4 h-4 text-white/80" />
-                    </div>
-                  </div>
-                </a>
-              </div>
+{/* Site Link - Floating at Bottom */}
+{/* Playlist Promo - Floating at Bottom */}
+<div className="relative z-10">
+  <a 
+    href="https://activity.kugou.com/page/v-3023b6a0/index.html?app=youth&qrcode=https%3A%2F%2Factivity.kugou.com%2Fshare%2Fv-a00a45b0%2Findex.html%3Fu%3D816298654%26h1%3D250917006061781716517059091939818536596%26h2%3D-%26specialid%3D-2147483648%26global_specialid%3Dcollection_3_816298654_27_0%26cType%3D0"
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="block w-full"
+  >
+    <div className="backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-3 flex items-center justify-between group transition-all duration-300 hover:scale-[1.02] hover:shadow-lg cursor-pointer">
+      <div className="flex flex-col">
+        <span className="text-xs font-bold text-white/90 mb-0.5 drop-shadow-md">
+          {language === 'zh' ? '品味不错？' : 'Nice taste?'}
+        </span>
+        <span className="text-[10px] text-white/70 font-medium group-hover:text-white/90 transition-colors">
+          {language === 'zh' ? '我的酷狗歌单里还有更多好听的哦' : 'More good songs in my Kugou playlist'}
+        </span>
+      </div>
+      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+        <ExternalLink className="w-4 h-4 text-white/80" />
+      </div>
+    </div>
+  </a>
+</div>
 
             </div>
           )}

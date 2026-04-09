@@ -11,11 +11,10 @@ export enum Category {
 }
 
 export enum ArticleCategory {
-  DIT = 'DiT', // 数媒与课程
-  LUNA = 'LUNA', // 影像相关
-  TALK = '瞎叨be叨', // 杂记
-  AFTER8 = 'After8', // 聊艺术
-  SERENITY = '山海疗养院' // 游记
+  MEMORY = 'memory',
+  GROUP = 'group',
+  PERSONAL = 'personal',
+  VOLUNTEER = 'volunteer'
 }
 
 export interface Article {
@@ -81,4 +80,5 @@ export interface HonorsData {
   scholarships: string[];
   titles: string[];
   competitions: CompetitionGroup[];
+  collectiveImages?: { title: string; image: string }[];
 }
