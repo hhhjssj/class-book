@@ -26,23 +26,14 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
     ...categoryOrder.filter((cat) => currentArticles.some((a) => a.category === cat))
   ];
 
-  const filteredAndSortedArticles = currentArticles
-    .filter((a) => filter === 'All' || a.category === filter)
-    .sort((a, b) => {
-      const dateA = a.date ? new Date(a.date).getTime() : 0;
-      const dateB = b.date ? new Date(b.date).getTime() : 0;
+const filteredAndSortedArticles = currentArticles
+  .filter((a) => filter === 'All' || a.category === filter)
+  .sort((a, b) => {
+    const dateA = a.date ? new Date(a.date).getTime() : 0;
+    const dateB = b.date ? new Date(b.date).getTime() : 0;
 
-      if (filter === 'All') {
-        const categoryIndexA = categoryOrder.indexOf(String(a.category));
-        const categoryIndexB = categoryOrder.indexOf(String(b.category));
-
-        if (categoryIndexA !== categoryIndexB) {
-          return categoryIndexA - categoryIndexB;
-        }
-      }
-
-      return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
-    });
+    return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+  });
 
   useEffect(() => {
     if (selectedArticle) {
