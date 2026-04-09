@@ -19,7 +19,7 @@ export const CONTACT_DATA: Record<Language, ContactContent> = {
     locationValue: "机械工程学院", 
     contactLabel: "联系班委会",
     emailMeLabel: "班长邮箱",
-    email: "2874731969@qq.com",
+    email: "sunshijie52@gmail.com",
     hello: "毕业快乐！",
     intro: "有什么想对大家说的话，欢迎在这里留言。",
     socials: {}, // 删掉所有社交媒体

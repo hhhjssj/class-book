@@ -28,11 +28,11 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.MEMORY,
       link: '#',
       coverImage: withBase('gallery/baoduzhai.jpg'),
-      date: '2023-10-20'
+      date: '2025-04-17'
     },
     zh: {
       title: '抱犊寨之行',
-      content: '那是大二那一年的秋天，全班同学一起爬上了抱犊寨。虽然腿很酸，但山顶的合照里，每个人的笑容都很灿烂。'
+      content: '那是大三那一年的春天，全班同学一起爬上了抱犊寨。虽然腿很酸，但山顶的合照里，每个人的笑容都很灿烂。'
     },
     en: {
       title: 'Trip to Baoduzhai',
@@ -45,7 +45,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.MEMORY,
       link: '#',
       coverImage: withBase('gallery/museum.jpg'),
-      date: '2022-11-15'
+      date: '2024-04-28'
     },
     zh: {
       title: '参观校史馆',
@@ -62,11 +62,11 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.MEMORY,
       link: '#',
       coverImage: withBase('gallery/zhengdingxing-1.jpg'),
-      date: '2023-11-10'
+      date: '2024-05-23'
     },
     zh: {
       title: '正定之行',
-      content: '周末的古城之旅，大家一起逛古街、尝美食，在城墙根下留下了很多轻松又热闹的瞬间。'
+      content: '古城之旅，大家一起参观第二十七届全国发明展览会。'
     },
     en: {
       title: 'Trip to Zhengding',
@@ -79,7 +79,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.MEMORY,
       link: '#',
       coverImage: withBase('gallery/banji-hezhao.jpg'),
-      date: '2022-09-01'
+      date: '2023-11-01'
     },
     zh: {
       title: '班级合照',
@@ -96,7 +96,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.MEMORY,
       link: '#',
       coverImage: withBase('gallery/jinian-maozhuxi-danchen.jpg'),
-      date: '2023-12-26'
+      date: '2024-12-26'
     },
     zh: {
       title: '纪念毛主席诞辰',
@@ -114,11 +114,11 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/fenglongshan-tuanjian.jpg'),
-      date: '2023-04-15'
+      date: '2026-03-28'
     },
     zh: {
-      title: '封龙山团建',
-      content: '宿舍团建爬封龙山的那次，大家一路说说笑笑，爬山的疲惫也被同伴之间的热闹冲淡了不少。'
+      title: '抱犊寨团建',
+      content: '宿舍团建爬抱犊寨的那次，大家一路说说笑笑，爬山的疲惫也被同伴之间的热闹冲淡了不少。'
     },
     en: {
       title: 'Fenglongshan Trip',
@@ -131,7 +131,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/415-yuebing.jpg'),
-      date: '2023-09-28'
+      date: '2024-09-28'
     },
     zh: {
       title: '包月饼活动',
@@ -148,7 +148,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/dongzhi-jiaozi.jpg'),
-      date: '2023-12-22'
+      date: '2024-12-22'
     },
     zh: {
       title: '冬至包饺子',
@@ -165,11 +165,11 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/banji-baoduzhai.jpg'),
-      date: '2023-10-21'
+      date: '2025-04-17'
     },
     zh: {
-      title: '班级再游抱犊寨',
-      content: '同样是抱犊寨，这一次更多了几分熟悉与默契。一路同行的欢笑，让这段班级记忆显得更加鲜活。'
+      title: '游抱犊寨',
+      content: '同样是抱犊寨，一路同行的欢笑，让这段班级记忆显得更加鲜活。'
     },
     en: {
       title: 'Baoduzhai Again',
@@ -217,7 +217,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.PERSONAL,
       link: '#',
       coverImage: withBase('gallery/zhangao-study.jpg'),
-      date: '2023-11-05'
+      date: '2024-11-05'
     },
     zh: {
       title: '学习日常',
@@ -252,7 +252,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.VOLUNTEER,
       link: '#',
       coverImage: withBase('gallery/volunteer-school.jpg'),
-      date: '2023-05-20'
+      date: '2024-05-20'
     },
     zh: {
       title: '小学授课志愿',
@@ -278,6 +278,162 @@ export const ARTICLE_DATA = [
     en: {
       title: 'Epidemic Support',
       content: 'Ordinary moments of service that showed responsibility and commitment in a special time.'
+    }
+  },
+  {
+    id: 'moment-16',
+    common: {
+      category: ArticleCategory.GROUP,
+      link: '#',
+      coverImage: withBase('gallery/415-tuanjian.jpg'),
+      date: '2024-03-16'
+    },
+    zh: {
+      title: '415团建',
+      content: '415宿舍的兄弟们一起出游，山路上聊聊生活和学习，热闹得很。'
+    },
+    en: {
+      title: '415 Dorm Outing',
+      content: 'A fun trip with the 415 dorm boys, full of laughter and conversation.'
+    }
+  },
+  {
+    id: 'moment-17',
+    common: {
+      category: ArticleCategory.GROUP,
+      link: '#',
+      coverImage: withBase('gallery/415-culture-show.jpg'),
+      date: '2024-05-12'
+    },
+    zh: {
+      title: '宿舍文化展示',
+      content: '415宿舍的文化展示被搬上了公众号，让更多人看到了我们的创意和风采。'
+    },
+    en: {
+      title: 'Dorm Culture Display',
+      content: 'Our dorm culture showcase featured in the public account, sharing our creativity.'
+    }
+  },
+
+  {
+    id: 'moment-19',
+    common: {
+      category: ArticleCategory.GROUP,
+      link: '#',
+      coverImage: withBase('gallery/laodong-ketang.jpg'),
+      date: '2024-04-20'
+    },
+    zh: {
+      title: '劳动大课堂',
+      content: '在劳动实践中亲身体验，感受劳动的意义和价值。'
+    },
+    en: {
+      title: 'Labor Class',
+      content: 'A practical labor session that taught us the value of hard work.'
+    }
+  },
+
+  {
+    id: 'moment-21',
+    common: {
+      category: ArticleCategory.GROUP,
+      link: '#',
+      coverImage: withBase('gallery/jinlili-yuebing.jpg'),
+      date: '2024-09-28'
+    },
+    zh: {
+      title: '做月饼',
+      content: '中秋做月饼，既是传统文化的传承，也是一次难忘的集体回忆。'
+    },
+    en: {
+      title: 'Making Mooncakes',
+      content: 'A memorable mooncake-making session celebrating the Mid-Autumn Festival.'
+    }
+  },
+
+  {
+    id: 'moment-23',
+    common: {
+      category: ArticleCategory.VOLUNTEER,
+      link: '#',
+      coverImage: withBase('gallery/volunteer-reception.jpg'),
+      date: '2024-04-27'
+    },
+    zh: {
+      title: '招待处志愿',
+      content: '在招待处做志愿者，锻炼待人接物的能力，也收获了一段特别的经历。'
+    },
+    en: {
+      title: 'Reception Volunteering',
+      content: 'A volunteer experience at the reception desk that built valuable skills.'
+    }
+  },
+  {
+    id: 'moment-24',
+    common: {
+      category: ArticleCategory.VOLUNTEER,
+      link: '#',
+      coverImage: withBase('gallery/volunteer-tree-tag.jpg'),
+      date: '2024-03-12'
+    },
+    zh: {
+      title: '挂树牌志愿',
+      content: '为树木挂上身份牌，用简单的方式为环境保护出一份力。'
+    },
+    en: {
+      title: 'Tree Tagging',
+      content: 'A simple yet meaningful activity tagging trees for environmental awareness.'
+    }
+  },
+  {
+    id: 'moment-25',
+    common: {
+      category: ArticleCategory.VOLUNTEER,
+      link: '#',
+      coverImage: withBase('gallery/volunteer-school-2.jpg'),
+      date: '2024-05-21'
+    },
+    zh: {
+      title: '小学授课（补充）',
+      content: '再一次走进小学课堂，和孩子们在一起的时光总是充实又快乐。'
+    },
+    en: {
+      title: 'Teaching Again',
+      content: 'Another rewarding session teaching at the primary school.'
+    }
+  },
+  {
+    id: 'moment-26',
+    common: {
+      category: ArticleCategory.VOLUNTEER,
+      link: '#',
+      coverImage: withBase('gallery/volunteer-epidemic-2.jpg'),
+      date: '2022-11-19'
+    },
+    zh: {
+      title: '疫情志愿（补充）',
+      content: '特殊时期的志愿服务，虽然辛苦，但也收获了满满的成就感。'
+    },
+    en: {
+      title: 'Epidemic Support Again',
+      content: 'Another round of volunteer service during the challenging epidemic period.'
+    }
+  },
+  {
+    id: 'moment-27',
+    common: {
+      category: ArticleCategory.PERSONAL,
+      link: '#',
+      coverImage: withBase('gallery/shenyaliang-rm2025.jpg'),
+      date: '2025-05-01'
+    },
+    zh: {
+      title: 'RoboMaster 2025',
+      content: '在RoboMaster赛场上拼搏的身影，记录下青春最燃的瞬间。'
+    },
+    en: {
+      title: 'RoboMaster 2025',
+      content: ' Competition moments from RoboMaster 2025, capturing the thrill of youth.'
     }
   }
 ];
