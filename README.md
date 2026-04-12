@@ -1,4 +1,3 @@
-这是一份为你整理好的，非常适合直接用作 GitHub `README.md` 文件的 Markdown 格式：
 
 ***
 
