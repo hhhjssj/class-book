@@ -1,53 +1,36 @@
-# LUN3CY FAN - Personal Website (Pure Edition)
+# 机2201-2班班级纪念网站
 
-这是我的个人网站纯净版，旨在提供一个极简、高性能且易于维护的个人主页模板。
+这是一个为机2201-2班制作的班级纪念网站，用来展示班级风采、宿舍生活、成长经历与毕业回忆。  
+网站以照片、文字和音乐为主要内容，希望把大学几年的重要瞬间整理成一个可以长期保存和回看的线上纪念册。
 
-## 🛠️ 技术栈
+## 网站地址
 
-- **框架**: [React 19](https://react.dev/)
-- **构建工具**: [Vite 6](https://vitejs.dev/)
-- **样式**: [Tailwind CSS 3](https://tailwindcss.com/)
-- **动画**: [Framer Motion](https://www.framer.com/motion/)
-- **图标**: [Lucide React](https://lucide.dev/)
-- **类型安全**: [TypeScript](https://www.typescriptlang.org/)
+[https://hhhjssj.github.io/class-book/](https://hhhjssj.github.io/class-book/)
 
-## 🚀 快速开始
+## 项目内容
 
-### 1. 克隆项目
-```bash
-git clone https://github.com/LuN3cy/LuN3cy.git
-cd LuN3cy
-```
+网站主要包括以下几个部分：
 
-### 2. 安装依赖
+- 班级首页展示
+- 班级简介与风采
+- 宿舍与集体荣誉展示
+- 时光长廊与照片记录
+- 毕业去向与未来展望
+- 音乐与纪念氛围设计
+
+## 本地运行
+
 ```bash
 npm install
-```
-
-### 3. 启动开发服务器
-```bash
 npm run dev
-```
-
-### 4. 构建生产版本
-```bash
+打包部署
 npm run build
-```
 
-## 📁 目录结构
+本项目目前部署在 GitHub Pages。
 
-- `src/data/`: 存放网站的所有文本内容、经历、项目和音乐列表。
-- `components/`: React 组件库，采用模块化设计。
-- `public/`: 静态资源文件（音乐、封面图等）。
+说明
 
-## 📦 部署
+这个项目主要用于班级纪念展示，页面内容均围绕机2201-2班大学期间的学习、生活与集体记忆进行整理与设计。
+后续可根据需要继续补充照片、文字、视频或其他纪念内容。
 
-本项目支持在 [Vercel](https://vercel.com/) 或 GitHub Pages 上一键部署。
-
-项目根目录下包含一个 `deploy.bat` 脚本，适用于 Windows 用户快速同步更改到 GitHub：
-- **功能**: 自动执行 `git add`, `git commit` 和 `git push`。
-- **使用**: 双击 `deploy.bat` 即可。
-
-## 📄 许可证
-
-MIT License. Feel free to use and modify!
+作者：孙世杰
