@@ -28,6 +28,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.MEMORY,
       link: '#',
       coverImage: withBase('gallery/baoduzhai.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/baoduzhai.jpg'),
       date: '2025-04-17'
     },
     zh: {
@@ -45,6 +46,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.MEMORY,
       link: '#',
       coverImage: withBase('gallery/museum.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/museum.jpg'),
       date: '2024-04-28'
     },
     zh: {
@@ -62,6 +64,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.MEMORY,
       link: '#',
       coverImage: withBase('gallery/zhengdingxing-1.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/zhengdingxing-1.jpg'),
       date: '2024-05-23'
     },
     zh: {
@@ -79,6 +82,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.MEMORY,
       link: '#',
       coverImage: withBase('gallery/banji-hezhao.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/banji-hezhao.jpg'),
       date: '2023-11-01'
     },
     zh: {
@@ -96,6 +100,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.MEMORY,
       link: '#',
       coverImage: withBase('gallery/jinian-maozhuxi-danchen.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/jinian-maozhuxi-danchen.jpg'),
       date: '2024-12-26'
     },
     zh: {
@@ -107,13 +112,13 @@ export const ARTICLE_DATA = [
       content: 'A meaningful commemorative activity to reflect on history and responsibility.'
     }
   },
-
   {
     id: 'moment-6',
     common: {
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/fenglongshan-tuanjian.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/fenglongshan-tuanjian.jpg'),
       date: '2026-03-28'
     },
     zh: {
@@ -131,6 +136,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/415-yuebing.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/415-yuebing.jpg'),
       date: '2024-09-28'
     },
     zh: {
@@ -148,6 +154,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/dongzhi-jiaozi.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/dongzhi-jiaozi.jpg'),
       date: '2024-12-22'
     },
     zh: {
@@ -165,6 +172,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/banji-baoduzhai.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/banji-baoduzhai.jpg'),
       date: '2025-04-17'
     },
     zh: {
@@ -176,13 +184,13 @@ export const ARTICLE_DATA = [
       content: 'Another trip to Baoduzhai, this time with even stronger friendship and chemistry.'
     }
   },
-
   {
     id: 'moment-10',
     common: {
       category: ArticleCategory.PERSONAL,
       link: '#',
       coverImage: withBase('gallery/sunshijie-marathon.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/sunshijie-marathon.jpg'),
       date: '2024-03-31'
     },
     zh: {
@@ -200,6 +208,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.PERSONAL,
       link: '#',
       coverImage: withBase('gallery/maxiaokai-host.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/maxiaokai-host.jpg'),
       date: '2023-12-10'
     },
     zh: {
@@ -217,6 +226,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.PERSONAL,
       link: '#',
       coverImage: withBase('gallery/zhangao-study.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/zhangao-study.jpg'),
       date: '2024-11-05'
     },
     zh: {
@@ -228,13 +238,13 @@ export const ARTICLE_DATA = [
       content: 'A quiet study moment that captures the everyday dedication of college life.'
     }
   },
-
   {
     id: 'moment-13',
     common: {
       category: ArticleCategory.VOLUNTEER,
       link: '#',
       coverImage: withBase('gallery/volunteer-hutuohe.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/volunteer-hutuohe.jpg'),
       date: '2023-04-08'
     },
     zh: {
@@ -252,6 +262,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.VOLUNTEER,
       link: '#',
       coverImage: withBase('gallery/volunteer-school.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/volunteer-school.jpg'),
       date: '2024-05-20'
     },
     zh: {
@@ -269,6 +280,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.VOLUNTEER,
       link: '#',
       coverImage: withBase('gallery/volunteer-epidemic.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/volunteer-epidemic.jpg'),
       date: '2022-11-18'
     },
     zh: {
@@ -286,6 +298,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/415-tuanjian.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/415-tuanjian.jpg'),
       date: '2024-03-16'
     },
     zh: {
@@ -303,6 +316,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/415-culture-show.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/415-culture-show.jpg'),
       date: '2024-05-12'
     },
     zh: {
@@ -314,13 +328,13 @@ export const ARTICLE_DATA = [
       content: 'Our dorm culture showcase featured in the public account, sharing our creativity.'
     }
   },
-
   {
     id: 'moment-19',
     common: {
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/laodong-ketang.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/laodong-ketang.jpg'),
       date: '2024-04-20'
     },
     zh: {
@@ -332,13 +346,13 @@ export const ARTICLE_DATA = [
       content: 'A practical labor session that taught us the value of hard work.'
     }
   },
-
   {
     id: 'moment-21',
     common: {
       category: ArticleCategory.GROUP,
       link: '#',
       coverImage: withBase('gallery/jinlili-yuebing.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/jinlili-yuebing.jpg'),
       date: '2024-09-28'
     },
     zh: {
@@ -350,13 +364,13 @@ export const ARTICLE_DATA = [
       content: 'A memorable mooncake-making session celebrating the Mid-Autumn Festival.'
     }
   },
-
   {
     id: 'moment-23',
     common: {
       category: ArticleCategory.VOLUNTEER,
       link: '#',
       coverImage: withBase('gallery/volunteer-reception.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/volunteer-reception.jpg'),
       date: '2024-04-27'
     },
     zh: {
@@ -374,6 +388,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.VOLUNTEER,
       link: '#',
       coverImage: withBase('gallery/volunteer-tree-tag.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/volunteer-tree-tag.jpg'),
       date: '2024-03-12'
     },
     zh: {
@@ -391,6 +406,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.VOLUNTEER,
       link: '#',
       coverImage: withBase('gallery/volunteer-school-2.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/volunteer-school-2.jpg'),
       date: '2024-05-21'
     },
     zh: {
@@ -408,6 +424,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.VOLUNTEER,
       link: '#',
       coverImage: withBase('gallery/volunteer-epidemic-2.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/volunteer-epidemic-2.jpg'),
       date: '2022-11-19'
     },
     zh: {
@@ -425,6 +442,7 @@ export const ARTICLE_DATA = [
       category: ArticleCategory.PERSONAL,
       link: '#',
       coverImage: withBase('gallery/shenyaliang-rm2025.jpg'),
+      thumbnailImage: withBase('gallery/thumbs/shenyaliang-rm2025.jpg'),
       date: '2025-05-01'
     },
     zh: {
