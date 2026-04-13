@@ -200,9 +200,9 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
                 <X size={24} className="text-black dark:text-white" />
               </button>
 
-<div className="w-full h-[28vh] md:h-[42vh] bg-zinc-100 dark:bg-zinc-900 relative overflow-hidden rounded-t-[2rem] flex items-center justify-center">
+<div className="w-full bg-zinc-100 dark:bg-zinc-900 rounded-t-[2rem] px-4 md:px-8 pt-6 md:pt-8 pb-4 flex items-center justify-center">
   {selectedArticle.coverImage ? (
-    <picture className="w-full h-full flex items-center justify-center">
+    <picture className="w-full flex items-center justify-center">
       <source
         media="(max-width: 768px)"
         srcSet={selectedArticle.coverImage.replace('/gallery/', '/gallery/mobile/')}
@@ -211,11 +211,11 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
         src={selectedArticle.coverImage}
         alt={selectedArticle.title}
         decoding="async"
-        className="w-full h-full object-contain"
+        className="max-w-full w-auto max-h-[50vh] md:max-h-[62vh] object-contain rounded-2xl"
       />
     </picture>
   ) : (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="w-full h-[32vh] flex items-center justify-center">
       <BookOpen size={52} className="text-zinc-400 dark:text-zinc-600" />
     </div>
   )}
