@@ -130,15 +130,21 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
               >
                 <div className="flex flex-col md:flex-row bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden p-2 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 items-stretch">
                   <div className="w-full md:w-[45%] aspect-[4/3] shrink-0 rounded-xl overflow-hidden relative bg-gray-100 dark:bg-gray-800">
-                    {article.coverImage ? (
-                      <img
-                        src={article.coverImage}
-                        alt={article.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
-                    ) : (
+                   {article.coverImage ? (
+  <picture>
+    <source
+      media="(max-width: 768px)"
+      srcSet={article.coverImage.replace('/gallery/', '/gallery/mobile/')}
+    />
+    <img
+      src={article.coverImage}
+      alt={article.title}
+      loading="lazy"
+      decoding="async"
+      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+  </picture>
+) : (
                       <div className="w-full h-full flex items-center justify-center bg-gray-50 dark:bg-gray-800">
                         <BookOpen size={32} className="text-gray-300 dark:text-gray-600" />
                       </div>
