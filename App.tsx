@@ -56,6 +56,14 @@ function App() {
     window.scrollTo(0, 0);
   }, [activeTab]);
 
+  useEffect(() => {
+    return () => {
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+      }
+    };
+  }, []);
+
   const toggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   const toggleLanguage = () => setLanguage((prev) => (prev === 'zh' ? 'en' : 'zh'));
 
@@ -83,45 +91,79 @@ function App() {
     document.body.style.overflow = 'hidden';
     setGravityActive(true);
 
-    const { Engine, Runner, Bodies, Composite } = Matter;
+    const { Engine, Runner, Bodies, Composite, Body } = Matter;
     const engine = Engine.create({ positionIterations: 12 });
 
-    const largeComponents = Array.from(
-      document.querySelectorAll('main img, .aspect-\\[4\\/3\\]')
-    ) as HTMLElement[];
-
-    largeComponents.forEach((el) => {
-      el.style.transition = 'all 0.5s ease-out';
-      el.style.opacity = '0';
-      el.style.pointerEvents = 'none';
-    });
-
-    const selector =
-      'nav h1, nav button, footer p, main h1, main h2, main h3, main p, main span, main button, main a, div[class*="border-b-2"], div[class*="h-[1px]"]';
+    const selector = [
+      'nav',
+      'footer',
+      'main img',
+      'main button',
+      'main a',
+      'main input',
+      'main textarea',
+      'main form',
+      'main h1',
+      'main h2',
+      'main h3',
+      'main p',
+      'main span',
+      'main svg',
+      'main [class*="rounded-[2rem]"]',
+      'main [class*="rounded-[3rem]"]',
+      'main [class*="rounded-[4rem]"]',
+      'main [class*="aspect-[4/3]"]',
+      'main [class*="border-b-2"]',
+      'main [class*="h-[1px]"]',
+      '[data-gravity]'
+    ].join(', ');
 
     const candidates = Array.from(document.querySelectorAll(selector)) as HTMLElement[];
+
     const validElements = candidates.filter((el) => {
       const rect = el.getBoundingClientRect();
-      return rect.width > 5 && rect.height > 5 && !candidates.some((p) => p !== el && p.contains(el));
+      const style = window.getComputedStyle(el);
+
+      if (rect.width < 12 || rect.height < 12) return false;
+      if (style.display === 'none' || style.visibility === 'hidden') return false;
+      if (parseFloat(style.opacity || '1') === 0) return false;
+
+      return true;
     });
 
     const bodies = validElements.map((el) => {
       const rect = el.getBoundingClientRect();
+
       const body = Bodies.rectangle(
         rect.left + rect.width / 2 + window.scrollX,
         rect.top + rect.height / 2 + window.scrollY,
         rect.width,
         rect.height,
-        { restitution: 0.2 }
+        {
+          restitution: 0.2,
+          friction: 0.4,
+          density: 0.001
+        }
       );
 
       (body as any).domElement = el;
+
       el.style.position = 'absolute';
       el.style.left = `${rect.left + window.scrollX}px`;
       el.style.top = `${rect.top + window.scrollY}px`;
       el.style.width = `${rect.width}px`;
+      el.style.height = `${rect.height}px`;
+      el.style.margin = '0';
       el.style.zIndex = '1000';
       el.style.pointerEvents = 'none';
+      el.style.transformOrigin = 'center center';
+
+      Body.setVelocity(body, {
+        x: (Math.random() - 0.5) * 5,
+        y: -2 - Math.random() * 2
+      });
+      Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.08);
+
       return body;
     });
 
@@ -131,6 +173,20 @@ function App() {
         document.documentElement.scrollHeight + 500,
         window.innerWidth,
         1000,
+        { isStatic: true }
+      ),
+      Bodies.rectangle(
+        -500,
+        document.documentElement.scrollHeight / 2,
+        1000,
+        document.documentElement.scrollHeight * 2,
+        { isStatic: true }
+      ),
+      Bodies.rectangle(
+        window.innerWidth + 500,
+        document.documentElement.scrollHeight / 2,
+        1000,
+        document.documentElement.scrollHeight * 2,
         { isStatic: true }
       ),
       ...bodies
@@ -143,9 +199,10 @@ function App() {
       bodies.forEach((body) => {
         const el = (body as any).domElement as HTMLElement;
         const dx = body.position.x - (parseFloat(el.style.left) + parseFloat(el.style.width) / 2);
-        const dy = body.position.y - (parseFloat(el.style.top) + el.offsetHeight / 2);
+        const dy = body.position.y - (parseFloat(el.style.top) + parseFloat(el.style.height) / 2);
         el.style.transform = `translate(${dx}px, ${dy}px) rotate(${body.angle}rad)`;
       });
+
       requestRef.current = requestAnimationFrame(update);
     };
 
@@ -153,6 +210,9 @@ function App() {
   };
 
   const resetGravity = () => {
+    if (requestRef.current) {
+      cancelAnimationFrame(requestRef.current);
+    }
     setGravityActive(false);
     window.location.reload();
   };
