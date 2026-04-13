@@ -16,6 +16,7 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
   const [filter, setFilter] = useState<string>('All');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
   const [selectedArticle, setSelectedArticle] = useState<MemoryArticle | null>(null);
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const currentArticles = ARTICLES[language] as MemoryArticle[];
 
@@ -51,6 +52,13 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
       document.body.style.overflow = '';
     }
   }, [selectedArticle]);
+
+  useEffect(() => {
+    setVisibleCount(6);
+  }, [filter, sortOrder, language]);
+
+  const visibleArticles = filteredAndSortedArticles.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredAndSortedArticles.length;
 
   return (
     <div className="w-full max-w-[96vw] mx-auto pb-20">
@@ -122,7 +130,7 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
           </div>
 
           <div className="flex flex-col gap-6">
-            {filteredAndSortedArticles.map((article) => (
+            {visibleArticles.map((article) => (
               <div
                 key={article.id}
                 className="group cursor-pointer"
@@ -175,6 +183,17 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
               </div>
             ))}
           </div>
+
+          {hasMore && (
+            <div className="flex justify-center mt-10">
+              <button
+                onClick={() => setVisibleCount((prev) => prev + 6)}
+                className="px-6 py-3 rounded-xl bg-black text-white dark:bg-white dark:text-black font-bold hover:opacity-90 transition-opacity"
+              >
+                {language === 'zh' ? '查看更多' : 'Load More'}
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
