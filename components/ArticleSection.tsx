@@ -10,7 +10,6 @@ interface ArticleSectionProps {
 
 type MemoryArticle = Article & {
   content?: string;
-  thumbnailImage?: string;
 };
 
 export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
@@ -56,6 +55,7 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
   return (
     <div className="w-full max-w-[96vw] mx-auto pb-20">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 justify-center">
+        {/* 左侧分类 */}
         <div className="hidden lg:block w-64 flex-shrink-0">
           <div className="sticky top-32">
             <h3 className="text-xl font-black mb-8 px-4 flex items-center gap-2">
@@ -84,7 +84,9 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
           </div>
         </div>
 
+        {/* 右侧主体 */}
         <div className="flex-grow max-w-5xl">
+          {/* 移动端分类 */}
           <div className="lg:hidden flex flex-wrap gap-3 mb-8">
             {categories.map((cat) => (
               <button
@@ -130,7 +132,7 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
                   <div className="w-full md:w-[45%] aspect-[4/3] shrink-0 rounded-xl overflow-hidden relative bg-gray-100 dark:bg-gray-800">
                     {article.coverImage ? (
                       <img
-                        src={article.thumbnailImage || article.coverImage}
+                        src={article.coverImage}
                         alt={article.title}
                         loading="lazy"
                         decoding="async"
