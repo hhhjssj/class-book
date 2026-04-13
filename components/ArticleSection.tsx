@@ -16,7 +16,6 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
   const [filter, setFilter] = useState<string>('All');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
   const [selectedArticle, setSelectedArticle] = useState<MemoryArticle | null>(null);
-  const [visibleCount, setVisibleCount] = useState(6);
 
   const currentArticles = ARTICLES[language] as MemoryArticle[];
 
@@ -52,13 +51,6 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
       document.body.style.overflow = '';
     }
   }, [selectedArticle]);
-
-  useEffect(() => {
-    setVisibleCount(6);
-  }, [filter, sortOrder, language]);
-
-  const visibleArticles = filteredAndSortedArticles.slice(0, visibleCount);
-  const hasMore = visibleCount < filteredAndSortedArticles.length;
 
   return (
     <div className="w-full max-w-[96vw] mx-auto pb-20">
@@ -130,7 +122,7 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
           </div>
 
           <div className="flex flex-col gap-6">
-            {visibleArticles.map((article) => (
+            {filteredAndSortedArticles.map((article) => (
               <div
                 key={article.id}
                 className="group cursor-pointer"
@@ -183,17 +175,6 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
               </div>
             ))}
           </div>
-
-          {hasMore && (
-            <div className="flex justify-center mt-10">
-              <button
-                onClick={() => setVisibleCount((prev) => prev + 6)}
-                className="px-6 py-3 rounded-xl bg-black text-white dark:bg-white dark:text-black font-bold hover:opacity-90 transition-opacity"
-              >
-                {language === 'zh' ? '查看更多' : 'Load More'}
-              </button>
-            </div>
-          )}
         </div>
       </div>
 
@@ -215,17 +196,26 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
 
               <div className="w-full h-[28vh] md:h-[42vh] bg-zinc-200 dark:bg-zinc-800 relative overflow-hidden rounded-t-[2rem]">
                 {selectedArticle.coverImage ? (
-                  <img
-                    src={selectedArticle.coverImage}
-                    alt={selectedArticle.title}
-                    className="w-full h-full object-cover"
-                  />
+                  <>
+                    <picture>
+                      <source
+                        media="(max-width: 768px)"
+                        srcSet={selectedArticle.coverImage.replace('/gallery/', '/gallery/mobile/')}
+                      />
+                      <img
+                        src={selectedArticle.coverImage}
+                        alt={selectedArticle.title}
+                        decoding="async"
+                        className="w-full h-full object-cover"
+                      />
+                    </picture>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+                  </>
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">
                     <BookOpen size={52} className="text-zinc-400 dark:text-zinc-600" />
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
 
               <div className="p-6 md:p-12">
