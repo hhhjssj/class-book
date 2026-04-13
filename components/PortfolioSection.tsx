@@ -168,9 +168,18 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
                     <X size={24} className="text-black dark:text-white" />
                   </button>
 
-                  <div className="w-full h-[28vh] md:h-[42vh] bg-zinc-100 dark:bg-zinc-900 relative overflow-hidden rounded-t-[2rem] flex items-center justify-center">
-                    <ClassmateImage project={displayProject} mode="modal" />
-                  </div>
+<div className="w-full bg-zinc-100 dark:bg-zinc-900 rounded-t-[2rem] px-6 md:px-10 pt-8 md:pt-10 pb-4 flex items-center justify-center">
+  <div className="w-full flex items-center justify-center">
+    <img
+      src={displayProject.image}
+      alt={displayProject.title}
+      loading="lazy"
+      decoding="async"
+      referrerPolicy="no-referrer"
+      className="max-w-full w-auto max-h-[52vh] md:max-h-[62vh] object-contain rounded-2xl"
+    />
+  </div>
+</div>
 
                   <div className="p-6 md:p-12">
                     <div className="mb-8 md:mb-12">
