@@ -419,7 +419,13 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ language }) =>
                 {collectivePreviewItems.map((item, idx) => (
                   <div key={idx} className="space-y-2">
                     <div className="aspect-[4/3] rounded-lg overflow-hidden bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-                      <img src={item.image} alt={item.title} className="w-full h-full object-contain" />
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <p className="text-xs md:text-sm font-bold text-gray-600 dark:text-gray-400 text-center line-clamp-2">
                       {item.title}
@@ -527,6 +533,8 @@ export const TimelineSection: React.FC<TimelineSectionProps> = ({ language }) =>
                               <img
                                 src={item.image}
                                 alt={item.title}
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                               />
                             </div>
