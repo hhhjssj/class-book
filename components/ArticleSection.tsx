@@ -108,8 +108,7 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
 
           <div className="flex justify-between items-center mb-8 pb-4 border-b border-gray-200 dark:border-gray-800">
             <div className="text-sm font-mono text-gray-400">
-              {filteredAndSortedArticles.length}{' '}
-              {language === 'zh' ? '个回忆瞬间' : 'moments'}
+              {filteredAndSortedArticles.length} {language === 'zh' ? '个回忆瞬间' : 'moments'}
             </div>
 
             <button
@@ -135,6 +134,8 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
                       <img
                         src={article.coverImage}
                         alt={article.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     ) : (
@@ -160,9 +161,7 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
                     </div>
 
                     <div className="mt-8 pt-4 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between">
-                      <div className="text-sm font-mono text-gray-400">
-                        {article.date || ''}
-                      </div>
+                      <div className="text-sm font-mono text-gray-400">{article.date || ''}</div>
 
                       <div className="flex items-center gap-2 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors">
                         <span className="text-sm font-bold">
