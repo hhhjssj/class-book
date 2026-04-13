@@ -9,7 +9,10 @@ interface PortfolioSectionProps {
   externalFilter?: string;
 }
 
-const ClassmateImage: React.FC<{ project: Project }> = ({ project }) => {
+const ClassmateImage: React.FC<{ project: Project; mode?: 'card' | 'modal' }> = ({
+  project,
+  mode = 'card'
+}) => {
   const [imgError, setImgError] = useState(false);
 
   if (!project.image || imgError) {
@@ -35,7 +38,11 @@ const ClassmateImage: React.FC<{ project: Project }> = ({ project }) => {
       decoding="async"
       referrerPolicy="no-referrer"
       onError={() => setImgError(true)}
-      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      className={
+        mode === 'modal'
+          ? 'w-full h-full object-contain'
+          : 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-105'
+      }
     />
   );
 };
@@ -69,7 +76,6 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
 
   return (
     <div className="w-full max-w-[96vw] mx-auto pb-20">
-      {/* 顶部概览，不再分栏筛选 */}
       <div className="mb-10 md:mb-14 border-b-2 border-black dark:border-white pb-6 md:pb-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
@@ -88,7 +94,6 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
         </div>
       </div>
 
-      {/* 成员卡片 */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-14">
         {classmateProjects.map((project) => (
           <div
@@ -97,7 +102,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
             onClick={() => setSelectedProject(project)}
           >
             <div className="w-full aspect-[4/3] bg-zinc-100 dark:bg-zinc-900 mb-6 overflow-hidden rounded-[2rem] relative border border-zinc-200 dark:border-zinc-800 transition-all duration-500 group-hover:shadow-2xl">
-              <ClassmateImage project={project} />
+              <ClassmateImage project={project} mode="card" />
 
               <div className="absolute top-4 left-4 bg-white/95 dark:bg-black/90 text-black dark:text-white px-4 py-2 text-sm font-bold rounded-xl shadow-sm">
                 {language === 'zh' ? '同窗谱' : 'Classmate'}
@@ -133,7 +138,6 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
         ))}
       </div>
 
-      {/* 成员详情弹窗 */}
       {isModalRendered &&
         createPortal(
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8">
@@ -164,14 +168,11 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
                     <X size={24} className="text-black dark:text-white" />
                   </button>
 
-                  {/* 顶部主视觉 */}
-                  <div className="w-full h-[28vh] md:h-[42vh] bg-zinc-200 dark:bg-zinc-800 relative">
-                    <ClassmateImage project={displayProject} />
-                    <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+                  <div className="w-full h-[28vh] md:h-[42vh] bg-zinc-100 dark:bg-zinc-900 relative overflow-hidden rounded-t-[2rem] flex items-center justify-center">
+                    <ClassmateImage project={displayProject} mode="modal" />
                   </div>
 
                   <div className="p-6 md:p-12">
-                    {/* Header */}
                     <div className="mb-8 md:mb-12">
                       <div className="flex items-center gap-3 mb-4">
                         <span className="px-4 py-1.5 bg-black dark:bg-white text-white dark:text-black text-sm font-bold rounded-md">
@@ -194,7 +195,6 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
                     <div className="w-full h-[1px] bg-gray-200 dark:bg-gray-700 mb-8 md:mb-12" />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
-                      {/* 左侧：班级印象 */}
                       {displayProject.concept && (
                         <div className="space-y-8">
                           <h3 className="text-2xl font-black tracking-wide text-black dark:text-white border-l-4 border-black dark:border-white pl-6">
@@ -206,7 +206,6 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
                         </div>
                       )}
 
-                      {/* 右侧：身份与标签 */}
                       <div className="space-y-10">
                         <div className="space-y-4">
                           <h4 className="text-base font-bold uppercase text-gray-400 dark:text-gray-500 tracking-wider">

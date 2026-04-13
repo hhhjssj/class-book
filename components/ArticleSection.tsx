@@ -200,29 +200,26 @@ export const ArticleSection: React.FC<ArticleSectionProps> = ({ language }) => {
                 <X size={24} className="text-black dark:text-white" />
               </button>
 
-              <div className="w-full h-[28vh] md:h-[42vh] bg-zinc-200 dark:bg-zinc-800 relative overflow-hidden rounded-t-[2rem]">
-                {selectedArticle.coverImage ? (
-                  <>
-                    <picture>
-                      <source
-                        media="(max-width: 768px)"
-                        srcSet={selectedArticle.coverImage.replace('/gallery/', '/gallery/mobile/')}
-                      />
-                      <img
-                        src={selectedArticle.coverImage}
-                        alt={selectedArticle.title}
-                        decoding="async"
-                        className="w-full h-full object-cover"
-                      />
-                    </picture>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-                  </>
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <BookOpen size={52} className="text-zinc-400 dark:text-zinc-600" />
-                  </div>
-                )}
-              </div>
+<div className="w-full h-[28vh] md:h-[42vh] bg-zinc-100 dark:bg-zinc-900 relative overflow-hidden rounded-t-[2rem] flex items-center justify-center">
+  {selectedArticle.coverImage ? (
+    <picture className="w-full h-full flex items-center justify-center">
+      <source
+        media="(max-width: 768px)"
+        srcSet={selectedArticle.coverImage.replace('/gallery/', '/gallery/mobile/')}
+      />
+      <img
+        src={selectedArticle.coverImage}
+        alt={selectedArticle.title}
+        decoding="async"
+        className="w-full h-full object-contain"
+      />
+    </picture>
+  ) : (
+    <div className="w-full h-full flex items-center justify-center">
+      <BookOpen size={52} className="text-zinc-400 dark:text-zinc-600" />
+    </div>
+  )}
+</div>
 
               <div className="p-6 md:p-12">
                 <div className="mb-8 md:mb-10">
