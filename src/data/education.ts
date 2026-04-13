@@ -36,8 +36,8 @@ export const EDUCATION_DATA: Record<Language, EducationPageContent> = {
         id: '2',
         year: '2024.12',
         title: '巅峰时刻',
-        institution: '荣获“先进班集体”称号',
-        description: '全班同学共同努力，各项指标位居学院前列，荣誉挂在了机械楼一楼的墙上。',
+        institution: '荣获“校级先进班集体”称号',
+        description: '全班同学共同努力，各项指标位居学院前列，荣获校级先进班集体。',
         type: 'education'
       },
       {
