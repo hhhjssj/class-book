@@ -7,7 +7,7 @@
 
 ## 🌐 网站地址
 
-[https://hhhjssj.github.io/class-book/](https://hhhjssj.github.io/class-book/)
+[https://susu-chicken.github.io/class-book/](https://hhhjssj.github.io/class-book/)
 
 ## 📁 项目内容
 
